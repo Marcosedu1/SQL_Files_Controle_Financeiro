@@ -5,8 +5,8 @@ CREATE TABLE Credential
 Username VARCHAR(50) NOT NULL,
 Password VARCHAR(50) NOT NULL,
 Active BIT NOT NULL,
-CreationDate DATE NOT NULL,
-ChangeDate DATE NULL,
+CreationDate DATETIME NOT NULL,
+ChangeDate DATETIME NULL,
 CreationUser VARCHAR(50) NOT NULL,
 ChangeUser VARCHAR(50) NULL);
 
@@ -16,8 +16,8 @@ Description VARCHAR(30) NOT NULL,
 ValuePlan DECIMAL(6,2) NOT NULL,
 Renewal SMALLINT NOT NULL,
 Active BIT NOT NULL,
-CreationDate DATE NOT NULL,
-ChangeDate DATE NULL,
+CreationDate DATETIME NOT NULL,
+ChangeDate DATETIME NULL,
 CreationUser VARCHAR(50) NOT NULL,
 ChangeUser VARCHAR(50) NULL);
 
@@ -30,8 +30,8 @@ Phone VARCHAR(11) NOT NULL,
 CPF VARCHAR(11) NULL,
 CNPJ VARCHAR(14) NULL,
 Active BIT NOT NULL,
-CreationDate DATE NOT NULL,
-ChangeDate DATE NULL,
+CreationDate DATETIME NOT NULL,
+ChangeDate DATETIME NULL,
 CreationUser VARCHAR(50) NOT NULL,
 ChangeUser VARCHAR(50) NULL);
 
@@ -41,8 +41,8 @@ IdPlan TINYINT CONSTRAINT FK_Plan FOREIGN KEY REFERENCES ServicePlan(IdPlan) NOT
 IdClient INT CONSTRAINT FK_Client_Signature FOREIGN KEY REFERENCES Client(IdClient) NOT NULL,
 ExpirationDate DATE NULL,
 Active BIT NOT NULL,
-CreationDate DATE NOT NULL,
-ChangeDate DATE NULL,
+CreationDate DATETIME NOT NULL,
+ChangeDate DATETIME NULL,
 CreationUser VARCHAR(50) NOT NULL,
 ChangeUser VARCHAR(50) NULL);
 
@@ -50,8 +50,8 @@ CREATE TABLE Type
 (IdType CHAR(1) CONSTRAINT PK_Type PRIMARY KEY NOT NULL,
 Description VARCHAR(10) NOT NULL,
 Active BIT NOT NULL,
-CreationDate DATE NOT NULL,
-ChangeDate DATE NULL,
+CreationDate DATETIME NOT NULL,
+ChangeDate DATETIME NULL,
 CreationUser VARCHAR(50) NOT NULL,
 ChangeUser VARCHAR(50) NULL);
 
@@ -59,8 +59,8 @@ CREATE TABLE Category
 (IdCategory TINYINT CONSTRAINT PK_Category PRIMARY KEY NOT NULL,
 Description VARCHAR(30) NOT NULL,
 Active BIT NOT NULL,
-CreationDate DATE NOT NULL,
-ChangeDate DATE NULL,
+CreationDate DATETIME NOT NULL,
+ChangeDate DATETIME NULL,
 CreationUser VARCHAR(50) NOT NULL,
 ChangeUser VARCHAR(50) NULL);
 
@@ -68,9 +68,9 @@ CREATE TABLE Method
 (IdMethod TINYINT CONSTRAINT PK_Method PRIMARY KEY NOT NULL,
 Description VARCHAR(30) NOT NULL,
 Active BIT NOT NULL,
-CreationDate DATE NOT NULL,
+CreationDate DATETIME NOT NULL,
+ChangeDate DATETIME NULL,
 CreationUser VARCHAR(50) NOT NULL,
-ChangeDate DATE NULL,
 ChangeUser VARCHAR(50) NULL);
 
 CREATE TABLE BillsPayRecieve
@@ -87,7 +87,7 @@ DueDate DATE NOT NULL,
 SettlementDate DATE NULL,
 Receipt VARCHAR(200) NOT NULL,
 Active BIT NOT NULL,
-CreationDate DATE NOT NULL,
-ChangeDate DATE NULL,
+CreationDate DATETIME NOT NULL,
+ChangeDate DATETIME NULL,
 CreationUser VARCHAR(50) NOT NULL,
 ChangeUser VARCHAR(50) NULL);
