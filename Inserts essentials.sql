@@ -18,9 +18,11 @@ INSERT INTO Method(IdMethod,Description,Active,CreationDate,ChangeDate,CreationU
 INSERT INTO Method(IdMethod,Description,Active,CreationDate,ChangeDate,CreationUser,ChangeUser)VALUES(3,'Boleto',1,GETDATE(),GETDATE(),'marcos.camargo','marcos.camargo');
 INSERT INTO Method(IdMethod,Description,Active,CreationDate,ChangeDate,CreationUser,ChangeUser)VALUES(4,'Cartão de crédito',1,GETDATE(),GETDATE(),'marcos.camargo','marcos.camargo');
 INSERT INTO Method(IdMethod,Description,Active,CreationDate,ChangeDate,CreationUser,ChangeUser)VALUES(5,'Débito',1,GETDATE(),GETDATE(),'marcos.camargo','marcos.camargo');
-INSERT INTO ServicePlan(IdPlan,Description,ValuePlan,Renewal,Active,CreationDate,ChangeDate,CreationUser,ChangeUser)VALUES(1,'Free',0,0,1,GETDATE(),GETDATE(),'marcos.camargo','marcos.camargo');
-INSERT INTO ServicePlan(IdPlan,Description,ValuePlan,Renewal,Active,CreationDate,ChangeDate,CreationUser,ChangeUser)VALUES(2,'Premium Monthly',29.99,30,1,GETDATE(),GETDATE(),'marcos.camargo','marcos.camargo');
-INSERT INTO ServicePlan(IdPlan,Description,ValuePlan,Renewal,Active,CreationDate,ChangeDate,CreationUser,ChangeUser)VALUES(3,'Premium Annually',99.99,365,1,GETDATE(),GETDATE(),'marcos.camargo','marcos.camargo');
+INSERT INTO ServicePlan(IdPlan,Description,ValuePlan,Renewal,ValidateStart,ValidateOver,Active,CreationDate,ChangeDate,CreationUser,ChangeUser)VALUES(1,'Free',0,0,NULL,NULL,1,GETDATE(),GETDATE(),'marcos.camargo','marcos.camargo');
+INSERT INTO ServicePlan(IdPlan,Description,ValuePlan,Renewal,ValidateStart,ValidateOver,Active,CreationDate,ChangeDate,CreationUser,ChangeUser)VALUES(2,'Premium Monthly',29.99,30,'20220101','20230101',1,GETDATE(),GETDATE(),'marcos.camargo','marcos.camargo');
+INSERT INTO ServicePlan(IdPlan,Description,ValuePlan,Renewal,ValidateStart,ValidateOver,Active,CreationDate,ChangeDate,CreationUser,ChangeUser)VALUES(3,'Premium Annually',99.99,365,'20220101','20230101',1,GETDATE(),GETDATE(),'marcos.camargo','marcos.camargo');
+INSERT INTO ServicePlan(IdPlan,Description,ValuePlan,Renewal,ValidateStart,ValidateOver,Active,CreationDate,ChangeDate,CreationUser,ChangeUser)VALUES(4,'Premium Monthly',39.99,30,'20230101','20240101',1,GETDATE(),GETDATE(),'marcos.camargo','marcos.camargo');
+INSERT INTO ServicePlan(IdPlan,Description,ValuePlan,Renewal,ValidateStart,ValidateOver,Active,CreationDate,ChangeDate,CreationUser,ChangeUser)VALUES(5,'Premium Annually',119.99,365,'20230101','20240101',1,GETDATE(),GETDATE(),'marcos.camargo','marcos.camargo');
 
 COMMIT TRANSACTION
 

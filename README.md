@@ -9,3 +9,7 @@
 4. Insert Client
 5. Insert Signature
 6. Insert Bills
+
+
+colocar as palavras reservadas em colchetes, colocar as colunas de datas, uma coluna para pf/pj
+colocar em cima do banco de dadso gerar relatorios, que tipo de dados é relevantes, pensar como se fosse um usuario quer saber dados
