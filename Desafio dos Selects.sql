@@ -1,13 +1,13 @@
 
---SELECIONAR CLIENTES QUE ASSINAM PLANO PREMIUM E A VALIDAÇÃO
+--SELECIONAR CLIENTES QUE ASSINAM PLANO PREMIUM E A VALIDAÃ‡ÃƒO
 
 SELECT 
 	Client.IdClient [ID do Cliente], 
 	Client.Name AS [Nome do Cliente], 
 	Client.Email AS [Email do Cliente], 
 	ServicePlan.Description AS [Tipo do Plano], 
-	Signature.ValidationDate AS [Data da Validação], 
-	Signature.ExpirationDate AS [Data de Expiração]
+	Signature.ValidationDate AS [Data da ValidaÃ§Ã£o], 
+	Signature.ExpirationDate AS [Data de ExpiraÃ§Ã£o]
 FROM Client
 LEFT JOIN Signature 
 	ON Client.IdClient = Signature.IdClient
@@ -18,21 +18,21 @@ ORDER BY Client.Name;
 
 ------------------------------------------------------------------------------------
 
---SELECT DETALHADO DE LANÇAMENTOS DO MÊS DE JUNHO
+--SELECT DETALHADO DE LANÃ‡AMENTOS DO MÃŠS DE JUNHO
 
 SELECT
-	BillsPayRecieve.IdBills AS [ID do Lançamento],
+	BillsPayRecieve.IdBills AS [ID do LanÃ§amento],
 	Client.IdClient AS [ID do Cliente],
 	Client.Name AS [Nome do Cliente],
-	Type.Description [Tipo do Lançamento],
-	Category.Description [Categoria do Lançamento],
-	Method.Description [Método do Lançamento],
-	BillsPayRecieve.Description [Descrição do Lançamento],
+	Type.Description [Tipo do LanÃ§amento],
+	Category.Description [Categoria do LanÃ§amento],
+	Method.Description [MÃ©todo do LanÃ§amento],
+	BillsPayRecieve.Description [DescriÃ§Ã£o do LanÃ§amento],
 	BillsPayRecieve.ValuePredicted AS [Valor Previsto],
 	BillsPayRecieve.ValuePaidRecieved AS [Valor Liquidado],
 	BillsPayRecieve.DueDate AS [Data de Vencimento],
-	BillsPayRecieve.SettlementDate AS [Data de Liquidação],
-	BillsPayRecieve.Receipt AS [Recibo de Lançamento]
+	BillsPayRecieve.SettlementDate AS [Data de LiquidaÃ§Ã£o],
+	BillsPayRecieve.Receipt AS [Recibo de LanÃ§amento]
 FROM BillsPayRecieve
 LEFT JOIN Client
 	ON BillsPayRecieve.IdClient = Client.IdClient
@@ -49,10 +49,10 @@ ORDER BY
 
 ------------------------------------------------------------------------------------
 
---SELECT DE QUANTIDADE E SOMA POR TIPO DE LANÇAMENTO
+--SELECT DE QUANTIDADE E SOMA POR TIPO DE LANÃ‡AMENTO
 
 SELECT 
-	IdType AS [Tipo do Lançamento],
+	IdType AS [Tipo do LanÃ§amento],
 	COUNT(IdType) AS [Quantidade Tipo],
 	SUM(ValuePaidRecieved) AS [Soma por Tipo]
 FROM BillsPayRecieve
@@ -73,13 +73,13 @@ GROUP BY Signature.IdPlan;
 
 ------------------------------------------------------------------------------------
 
---MÉDIA DO VALOR DOS LANÇAMENTOS POR TIPO
+--MAX,MIN E MÃ‰DIA DO VALOR DOS LANÃ‡AMENTOS POR TIPO
 
 SELECT 
-	IdType AS [Tipo do Lançamento],
-	MAX(ValuePredicted) AS [Maior Lançamento],
-	MIN(ValuePredicted) AS [Menor Lançamento],
-	AVG(ValuePredicted) AS [Média dos Lançamentos]
+	IdType AS [Tipo do LanÃ§amento],
+	MAX(ValuePredicted) AS [Maior LanÃ§amento],
+	MIN(ValuePredicted) AS [Menor LanÃ§amento],
+	AVG(ValuePredicted) AS [MÃ©dia dos LanÃ§amentos]
 FROM BillsPayRecieve
 GROUP BY IdType;
 --RIP CRIATIVIDADE :(
